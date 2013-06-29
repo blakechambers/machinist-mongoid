@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  
+  spec.add_dependency "machinist", "~> 2.0.0.beta2"
 end
