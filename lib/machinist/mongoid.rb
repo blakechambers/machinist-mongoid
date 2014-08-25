@@ -61,7 +61,7 @@ module Machinist
       end
       
       def make_association(attribute, args) #:nodoc:
-        association = @klass.associations[attribute.to_s]
+        association = @klass.relations[attribute.to_s]
         if association
           association.klass.make(*args)
         else
