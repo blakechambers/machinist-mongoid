@@ -24,7 +24,9 @@ Or install it yourself as:
     appraisal install
 
     # each test run.
-    appraisal mongoid-3x rake spec
+    appraisal rake spec
+
+    # or for specific versions
     appraisal mongoid-4x rake spec
 
 
