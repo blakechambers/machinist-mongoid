@@ -1,8 +1,7 @@
 # Machinist::Mongoid
 
-This library is intended to support machinist 2.0 factories within Mongoid 3.x 
-codebases.  It's inspired by the existing [machinist_mongo][mm] gem that doesn't 
-support mongoid 3.x.
+This library is intended to support machinist 2.0 factories within Mongoid 3.x
+and 4.x versions.  It's originally inspired by the existing [machinist_mongo][mm] gem.
 
 ## Installation
 
@@ -18,9 +17,16 @@ Or install it yourself as:
 
     $ gem install machinist-mongoid
 
-## Usage
+## Testing
 
-TODO: Write usage instructions here
+    # once
+    bundle install
+    appraisal install
+
+    # each test run.
+    appraisal mongoid-3x rake spec
+    appraisal mongoid-4x rake spec
+
 
 ## Contributing
 
