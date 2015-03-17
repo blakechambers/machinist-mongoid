@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Machinist::Mongoid::VERSION
   spec.authors       = ["Blake Chambers"]
   spec.email         = ["chambb1@gmail.com"]
-  spec.description   = %q{Machinist for Mongoid 3.x}
-  spec.summary       = %q{Machinist for Mongoid 3.x}
+  spec.description   = %q{Machinist for Mongoid 3 and 4}
+  spec.summary       = %q{Machinist for Mongoid 3 and 4}
   spec.homepage      = "http://github.com/blakechambers/machinist-mongoid"
   spec.license       = "MIT"
 
