@@ -1,8 +1,6 @@
 test:
   sessions:
     default:
-      database: mongoid
+      database: machinist_mongoid
       hosts:
         - localhost:27017
-      options:
-          allow_dynamic_fields: true

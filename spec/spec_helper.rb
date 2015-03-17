@@ -1,9 +1,8 @@
 $LOAD_PATH.unshift File.dirname(__FILE__) + "/../lib"
 require "rubygems"
-require "rspec"
-#require "sham"
-
 require 'bundler/setup'
+
+require "rspec"
 
 module MachinistTestHelper
   def self.configure!

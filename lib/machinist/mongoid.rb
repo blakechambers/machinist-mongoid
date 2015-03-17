@@ -10,12 +10,12 @@ rescue LoadError
 end
 
 module Machinist
-  
+
   module Mongoid
-    
+
     module Machinable
       extend ActiveSupport::Concern
-      
+
       module ClassMethods
         include Machinist::Machinable
         def blueprint_class
@@ -23,23 +23,23 @@ module Machinist
         end
       end
     end
-    
+
     class Blueprint < Machinist::Blueprint
-      
+
       def make!(attributes = {})
         object = make(attributes)
         object.save!
         object.reload
       end
-      
+
       def lathe_class #:nodoc:
         Machinist::Mongoid::Lathe
       end
-      
+
       def outside_transaction
         yield
       end
-      
+
       def box(object)
         object.id
       end
@@ -49,7 +49,7 @@ module Machinist
         @klass.find(id)
       end
     end
-    
+
     class Lathe < Machinist::Lathe
       def make_one_value(attribute, args) #:nodoc:
         if block_given?
@@ -59,16 +59,16 @@ module Machinist
           make_association(attribute, args)
         end
       end
-      
+
       def make_association(attribute, args) #:nodoc:
-        association = @klass.relations[attribute.to_s]
-        if association
-          association.klass.make(*args)
+        relation = relations_for(@klass)[attribute.to_s]
+        if relation
+          relation.klass.make(*args)
         else
           raise_argument_error(attribute)
         end
       end
-      
+
       def assign_attribute(key, value)
         @assigned_attributes[key.to_sym] = value
         if @object.respond_to?("#{key}=")
@@ -77,6 +77,17 @@ module Machinist
           @object[key] = value
         end
       end
+
+    private
+
+    def relations_for(obj)
+      if ::Mongoid::VERSION =~ /^4\./
+        obj.relations
+      else
+        obj.associations
+      end
+    end
+
     end
   end
 end

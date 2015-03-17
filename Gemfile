@@ -1,7 +1,12 @@
 source "https://rubygems.org"
 
-group :test do 
-  gem 'mongoid',      "~> 3.0"
+group :development, :test do
+  gem "bundler", "~> 1.3"
+  gem "rake"
+  gem "appraisal"
+end
+
+group :test do
   gem 'machinist',    "~> 2.0"
   gem 'rspec',        "~> 2.13"
 end
