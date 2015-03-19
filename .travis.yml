@@ -1,5 +1,6 @@
 language: ruby
 bundler_args: --without development
+script: "bundle exec rake spec"
 gemfile:
   - gemfiles/mongoid_3x.gemfile
   - gemfiles/mongoid_4x.gemfile
