@@ -1,4 +1,4 @@
-# Machinist::Mongoid
+# Machinist::Mongoid [![Build Status](https://travis-ci.org/blakechambers/machinist-mongoid.svg)](https://travis-ci.org/blakechambers/machinist-mongoid)
 
 This library is intended to support machinist 2.0 factories within Mongoid 3.x
 and 4.x versions.  It's originally inspired by the existing [machinist_mongo][mm] gem.

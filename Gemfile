@@ -7,8 +7,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'machinist',    "~> 2.0"
-  gem 'rspec',        "~> 2.13"
+  gem "rspec",        "~> 2.13"
 end
 
 gemspec
