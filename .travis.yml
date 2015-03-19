@@ -4,6 +4,7 @@ script: "bundle exec rake spec"
 gemfile:
   - gemfiles/mongoid_3x.gemfile
   - gemfiles/mongoid_4x.gemfile
+env: CI="travis"
 rvm:
   - 1.9.3
   - 2.0.0

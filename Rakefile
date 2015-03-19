@@ -1,5 +1,11 @@
 require "rubygems"
-require "bundler/setup"
+require "bundler"
+
+if ENV["CI"] == "travis"
+  Bundler.setup(:test, :default)
+else
+  require "bundler/setup"
+end
 
 require "bundler/gem_tasks"
 
